@@ -15,8 +15,12 @@ INTERNAL_ID="462C1990-567F-5C42-050E-76AFCC40E6A5"
 EXTERNAL_ID="345C6A48-2B30-2098-689B-213F5A8D9991"
 
 # Determine current origins (positions)
-INTERNAL_ORIGIN=$(echo "$CURRENT_CONFIG" | grep -A 10 "$INTERNAL_ID" | grep "origin:" | sed 's/.*origin:(\([^)]*\)).*/\1/')
-EXTERNAL_ORIGIN=$(echo "$CURRENT_CONFIG" | grep -A 10 "$EXTERNAL_ID" | grep "origin:" | sed 's/.*origin:(\([^)]*\)).*/\1/')
+#INTERNAL_ORIGIN=$(echo "$CURRENT_CONFIG" | grep -A 10 "$INTERNAL_ID" | grep "origin:" | sed 's/.*origin:(\([^)]*\)).*/\1/')
+#EXTERNAL_ORIGIN=$(echo "$CURRENT_CONFIG" | grep -A 10 "$EXTERNAL_ID" | grep "origin:" | sed 's/.*origin:(\([^)]*\)).*/\1/')
+
+# Internal is always main display (0,0), external is always secondary (1920,0)
+INTERNAL_ORIGIN="0,0"
+EXTERNAL_ORIGIN="1920,0"
 
 # If we can't detect origins, fall back to defaults
 if [[ -z "$INTERNAL_ORIGIN" ]]; then
