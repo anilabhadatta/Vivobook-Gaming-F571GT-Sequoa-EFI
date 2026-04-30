@@ -80,3 +80,12 @@ sudo rm -rf /Users/Shared/fix-refresh-rate-screen
 sudo rm /etc/localtime
 sudo ln -s /var/db/timezone/zoneinfo/Asia/Kolkata /etc/localtime
 ```
+
+
+sudo pmset -a sleep 0
+sudo pmset -a hibernatemode 0
+sudo pmset -a autopoweroff 0 
+sudo pmset -a standby 0     
+sudo pmset -a proximitywake 0
+sudo pmset -a tcpkeepalive 0 
+sudo pmset -a disksleep 0
